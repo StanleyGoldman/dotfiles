@@ -1,0 +1,73 @@
+[alias]
+	#https://coderwall.com/p/euwpig/a-better-git-log
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lgr = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --remotes
+	lga = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+
+	a = add
+	aa = add -A
+	ap = add -p
+
+	b = branch
+	br = branch -r
+	ba = branch -a
+	
+	#https://gist.github.com/EQuimper/d875df92ef0ddaabf00636c90dbc9d25
+	bm = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+	#https://medium.com/@zlobin/advanced-git-advice-27087a7fbb29
+	bp = "!git branch --merged master | grep -v '^\\*' | xargs -n 1 git branch -d"
+
+	f = fetch
+	fp = fetch --prune
+
+	c = commit
+	cm = commit -m
+	co = checkout
+	cop = checkout -p
+	ca = commit --amend
+	cn = commit --no-edit
+	can = commit --amend --no-edit
+
+	s = stash
+	ss = stash save
+	ssp = stash save -p
+	sa = stash apply
+	sl = stash list 
+	sc = stash clear
+	sp = stash pop
+	sd = stash drop
+
+	d = diff
+	di = diff --stat
+	ds = diff --staged
+	dsi = diff --staged --stat
+	dt = difftool
+	dtd = difftool -d
+	dts = difftool --staged
+	dtsd = difftool --staged -d
+
+	mt = mergetool
+ 
+ 	r = reset
+ 	rp = reset -p
+	rh = reset --hard
+	rs = reset --soft
+
+	stat = status -b -u --porcelain
+	
+	#http://stackoverflow.com/a/7067489/104877
+	alias = config --get-regexp ^alias\\.
+	
+	#idea to open issues by number in a browser
+	#issues = "!f() { hub browse -- issues/$1; }; f"
+	
+	#http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
+	#ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	
+	sm = submodule
+	smf = submodule foreach
+	smui = submodule update --init
+	
+	#http://caiustheory.com/git-git-git-git-git/
+	git = !exec git
