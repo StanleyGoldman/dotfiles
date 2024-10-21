@@ -71,3 +71,5 @@
 	
 	#http://caiustheory.com/git-git-git-git-git/
 	git = !exec git
+[push]
+        autoSetupRemote = true
